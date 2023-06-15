@@ -8,6 +8,8 @@
   "version": "1.0.0",
   "category": "Penetration Testing",
   "help_online": "https://ridgesecurity.ai/resources/",
+  "icon_small_name": "ridge_small.png",
+  "icon_large_name": "ridge_large.png",
   "configuration": {
       "fields": [
           {
