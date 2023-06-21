@@ -1,0 +1,151 @@
+{
+  "name": "ridgebot",
+  "label": "Ridge Security RidgeBot",
+  "description": "RidgeBot validates security vulnerabilities in your organization by using real POC codes to exploit the vulnerability. This connector facilitates automated operation such as creating and executing penetration testing tasks.",
+  "publisher": "Ridge Security",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Penetration Testing",
+  "help_online": "https://ridgesecurity.ai/resources/",
+  "icon_small_name": "ridge_small.png",
+  "icon_large_name": "ridge_large.png",
+  "configuration": {
+      "fields": [
+          {
+              "title": "Server URL",
+              "name": "server_url",
+              "description": "Specify the RidgeBot server URL to which you can connect and perform automated operations.",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "text"
+          },
+          {
+              "title": "User Token",
+              "name": "user_token",
+              "description": "Specify an Identity Token used to access the RidgeBot endpoint to which you can connect and perform automated operations.",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "password"
+          }
+      ]
+  },
+  "operations": [
+      {
+          "operation": "get_task_info",
+          "title": "get_task_info",
+          "description": "Retrieves information about an existing task such as start time, end time, status, etc.",
+          "enabled": true,
+          "parameters": [
+              {
+                  "title": "Task ID",
+                  "description": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "tooltip": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "required": true,
+                  "visible": true,
+                  "editable": true,
+                  "type": "text",
+                  "name": "task_id"
+              }
+          ]
+      },
+      {
+          "operation": "get_task_statistics",
+          "title": "get_task_statistics",
+          "description": "Retrieves finding statistics of an existing task such number of assets found, number of vulnerabilities found per risk category, etc.",
+          "enabled": true,
+          "parameters": [
+              {
+                  "title": "Task ID",
+                  "description": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "tooltip": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "required": true,
+                  "visible": true,
+                  "editable": true,
+                  "type": "text",
+                  "name": "task_id"
+              }
+          ]
+      },
+      {
+          "operation": "generate_and_download",
+          "title": "generate_and_download",
+          "description": "Generates and downloads penetration testing report from a completed task by specifying the Task ID.",
+          "enabled": true,
+          "parameters": [
+              {
+                  "title": "Task ID",
+                  "description": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "tooltip": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "required": true,
+                  "visible": true,
+                  "editable": true,
+                  "type": "text",
+                  "name": "task_id"
+              }
+          ]
+      },
+      {
+          "operation": "stop_task",
+          "title": "stop_task",
+          "description": "Stops a running or unfinished task by specifying the Task ID.",
+          "enabled": true,
+          "parameters": [
+              {
+                  "title": "Task ID",
+                  "description": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "tooltip": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "required": true,
+                  "visible": true,
+                  "editable": true,
+                  "type": "text",
+                  "name": "task_id"
+              }
+          ]
+      },
+      {
+          "operation": "create_task",
+          "title": "create_task",
+          "description": "Creates a default intranet or web penetration testing task.",
+          "enabled": true,
+          "parameters": [
+              {
+                  "title": "Name of Scan",
+                  "description": "Specify a name or title for the task to be created.",
+                  "tooltip": "Specify a name or title for the task to be created.",
+                  "required": true,
+                  "visible": true,
+                  "editable": true,
+                  "type": "text",
+                  "name": "name"
+              },
+              {
+                  "title": "Type of Scan",
+                  "description": "Choose the type of scan to be created. Either Intranet or Web Penetration Testing task.",
+                  "tooltip": "Choose the type of scan to be created. Either Intranet or Web Penetration Testing task.",
+                  "required": true,
+                  "visible": true,
+                  "editable": true,
+                  "type": "select",
+                  "name": "temp_id",
+                  "options": [
+                      "Intranet",
+                      "Website"
+                  ]
+              },
+              {
+                  "title": "Targets",
+                  "description": "Specifies the target(s) for the scan.",
+                  "tooltip": "Specifies the target(s) for the scan.",
+                  "required": true,
+                  "visible": true,
+                  "editable": true,
+                  "type": "text",
+                  "name": "targets"
+              }
+          ]
+      }
+  ]
+}
