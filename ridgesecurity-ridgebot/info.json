@@ -1,7 +1,7 @@
 {
   "name": "ridgebot",
-  "label": "RidgeBot",
-  "description": "RidgeBot",
+  "label": "Ridge Security RidgeBot",
+  "description": "RidgeBot validates security vulnerabilities in your organization by using real POC codes to exploit the vulnerability. This connector facilitates automated operation such as creating and executing penetration testing tasks.",
   "publisher": "Ridge Security",
   "cs_approved": true,
   "cs_compatible": true,
@@ -15,6 +15,7 @@
           {
               "title": "Server URL",
               "name": "server_url",
+              "description": "Specify the RidgeBot server URL to which you can connect and perform automated operations.",
               "required": true,
               "editable": true,
               "visible": true,
@@ -23,6 +24,7 @@
           {
               "title": "User Token",
               "name": "user_token",
+              "description": "Specify an Identity Token used to access the RidgeBot endpoint to which you can connect and perform automated operations.",
               "required": true,
               "editable": true,
               "visible": true,
@@ -34,11 +36,13 @@
       {
           "operation": "get_task_info",
           "title": "get_task_info",
-          "description": "Get Task Info List for Single Task",
+          "description": "Retrieves information about an existing task such as start time, end time, status, etc.",
           "enabled": true,
           "parameters": [
               {
                   "title": "Task ID",
+                  "description": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "tooltip": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
                   "required": true,
                   "visible": true,
                   "editable": true,
@@ -50,11 +54,13 @@
       {
           "operation": "get_task_statistics",
           "title": "get_task_statistics",
-          "description": "Get Task Result with Attack Surface, Vulnerability and Risk Statistics",
+          "description": "Retrieves finding statistics of an existing task such number of assets found, number of vulnerabilities found per risk category, etc.",
           "enabled": true,
           "parameters": [
               {
                   "title": "Task ID",
+                  "description": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "tooltip": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
                   "required": true,
                   "visible": true,
                   "editable": true,
@@ -66,11 +72,13 @@
       {
           "operation": "generate_and_download",
           "title": "generate_and_download",
-          "description": "Generate and Download Report with Task ID",
+          "description": "Generates and downloads penetration testing report from a completed task by specifying the Task ID.",
           "enabled": true,
           "parameters": [
               {
                   "title": "Task ID",
+                  "description": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "tooltip": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
                   "required": true,
                   "visible": true,
                   "editable": true,
@@ -82,11 +90,13 @@
       {
           "operation": "stop_task",
           "title": "stop_task",
-          "description": "Stop an unfinished task",
+          "description": "Stops a running or unfinished task by specifying the Task ID.",
           "enabled": true,
           "parameters": [
               {
                   "title": "Task ID",
+                  "description": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
+                  "tooltip": "Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.",
                   "required": true,
                   "visible": true,
                   "editable": true,
@@ -98,11 +108,13 @@
       {
           "operation": "create_task",
           "title": "create_task",
-          "description": "Create and run a task",
+          "description": "Creates a default intranet or web penetration testing task.",
           "enabled": true,
           "parameters": [
               {
                   "title": "Name of Scan",
+                  "description": "Specify a name or title for the task to be created.",
+                  "tooltip": "Specify a name or title for the task to be created.",
                   "required": true,
                   "visible": true,
                   "editable": true,
@@ -111,6 +123,8 @@
               },
               {
                   "title": "Type of Scan",
+                  "description": "Choose the type of scan to be created. Either Intranet or Web Penetration Testing task.",
+                  "tooltip": "Choose the type of scan to be created. Either Intranet or Web Penetration Testing task.",
                   "required": true,
                   "visible": true,
                   "editable": true,
@@ -123,6 +137,8 @@
               },
               {
                   "title": "Targets",
+                  "description": "Specifies the target(s) for the scan.",
+                  "tooltip": "Specifies the target(s) for the scan.",
                   "required": true,
                   "visible": true,
                   "editable": true,
