@@ -3,13 +3,13 @@
   "label": "Ridge Security RidgeBot",
   "description": "RidgeBot validates security vulnerabilities in your organization by using real POC codes to exploit the vulnerability. This connector facilitates automated operation such as creating and executing penetration testing tasks.",
   "publisher": "Ridge Security",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "version": "1.0.0",
-  "category": "Penetration Testing",
-  "help_online": "https://ridgesecurity.ai/resources/",
-  "icon_small_name": "ridge_small.png",
-  "icon_large_name": "ridge_large.png",
+  "category": "Breach and Attack Simulation (BAS)",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-ridgebot/blob/release/1.0.0/docs/RidgeBotConnectorDoc.md",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
   "configuration": {
       "fields": [
           {
