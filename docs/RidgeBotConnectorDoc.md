@@ -31,14 +31,14 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations from FortiSOAR&trade; release 4.10.0 and onwards:
-<table border=1><thead><tr><th>Function<br></th><th>Description<br></th><th>Annotation and Category<br></th></tr></thead><tbody><tr><td>get_task_info<br></td><td>Retrieves information about an existing task such as start time, end time, status, etc.<br></td><td> <br/><br></td></tr>
-<tr><td>get_task_statistics<br></td><td>Retrieves finding statistics of an existing task such number of assets found, number of vulnerabilities found per risk category, etc.<br></td><td> <br/><br></td></tr>
-<tr><td>generate_and_download<br></td><td>Generates and downloads penetration testing report from a completed task by specifying the Task ID.<br></td><td> <br/><br></td></tr>
-<tr><td>stop_task<br></td><td>Stops a running or unfinished task by specifying the Task ID.<br></td><td> <br/><br></td></tr>
-<tr><td>create_task<br></td><td>Creates a default intranet or web penetration testing task.<br></td><td> <br/><br></td></tr>
+<table border=1><thead><tr><th>Function<br></th><th>Description<br></th><th>Annotation and Category<br></th></tr></thead><tbody><tr><td>Get Task Info<br></td><td>Retrieves information about an existing task such as start time, end time, status, etc.<br></td><td> <br/><br></td></tr>
+<tr><td>Get Task Statistics<br></td><td>Retrieves finding statistics of an existing task such number of assets found, number of vulnerabilities found per risk category, etc.<br></td><td> <br/><br></td></tr>
+<tr><td>Generate And Download<br></td><td>Generates and downloads penetration testing report from a completed task by specifying the Task ID.<br></td><td> <br/><br></td></tr>
+<tr><td>Stop Task<br></td><td>Stops a running or unfinished task by specifying the Task ID.<br></td><td> <br/><br></td></tr>
+<tr><td>Create Task<br></td><td>Creates a default intranet or web penetration testing task.<br></td><td> <br/><br></td></tr>
 </tbody></table>
 
-### operation: get_task_info
+### operation: Get Task Info
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Task ID<br></td><td>Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.<br>
 </td></tr></tbody></table>
@@ -46,7 +46,7 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  No output schema is available at this time.
-### operation: get_task_statistics
+### operation: Get Task Statistics
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Task ID<br></td><td>Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.<br>
 </td></tr></tbody></table>
@@ -54,7 +54,7 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  No output schema is available at this time.
-### operation: generate_and_download
+### operation: Generate And Download
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Task ID<br></td><td>Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.<br>
 </td></tr></tbody></table>
@@ -62,7 +62,7 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  No output schema is available at this time.
-### operation: stop_task
+### operation: Stop Task
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Task ID<br></td><td>Specify an existing RidgeBot Task ID for which you want to retrieve details from RidgeBot server.<br>
 </td></tr></tbody></table>
@@ -70,7 +70,7 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  No output schema is available at this time.
-### operation: create_task
+### operation: Create Task
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Name of Scan<br></td><td>Specify a name or title for the task to be created.<br>
 </td></tr><tr><td>Type of Scan<br></td><td>Choose the type of scan to be created. Either Intranet or Web Penetration Testing task.<br>
@@ -83,10 +83,10 @@ The following automated operations can be included in playbooks and you can also
 ## Included playbooks
 The `Sample - ridgebot - 1.0.0` playbook collection comes bundled with the Ridge Security RidgeBot connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR<sup>TM</sup> after importing the Ridge Security RidgeBot connector.
 
-- create_task
-- generate_and_download
-- get_task_info
-- get_task_statistics
-- stop_task
+- Create Task
+- Generate And Download
+- Get Task Info
+- Get Task Statistics
+- Stop Task
 
 **Note**: If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.
