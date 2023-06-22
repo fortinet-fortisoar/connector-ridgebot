@@ -1,0 +1,419 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "a846f7cc-c5bd-4e7a-960a-7fb44d8e1bc4",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Ridge Security RidgeBot - 1.0.0",
+      "description": "RidgeBot validates security vulnerabilities in your organization by using real POC codes to exploit the vulnerability. This connector facilitates automated operation such as creating and executing penetration testing tasks.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Ridgebot",
+        "ridgebot"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "293a8c42-a994-4210-a939-e91ac61a831a",
+          "collection": "/api/3/workflow_collections/a846f7cc-c5bd-4e7a-960a-7fb44d8e1bc4",
+          "triggerLimit": null,
+          "description": "Retrieves information about an existing task such as start time, end time, status, etc.",
+          "name": "Get Task Info",
+          "tag": "#Ridge Security RidgeBot",
+          "recordTags": [
+            "Ridgebot",
+            "ridgebot"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7631e8cd-42d6-4d21-b970-e017aa617627",
+          "steps": [
+            {
+              "uuid": "7631e8cd-42d6-4d21-b970-e017aa617627",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "d666f51f-3363-462c-8469-6b99607c6c94",
+                "title": "Ridge Security RidgeBot: Get Task Info",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "79ee3a82-0821-44e2-b0e1-cabe53d61607",
+              "@type": "WorkflowStep",
+              "name": "Get Task Info",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Ridge Security RidgeBot",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ridgebot",
+                "operation": "get_task_info",
+                "operationTitle": "Get Task Info",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8c70f382-16d5-49b3-a96a-d07c98e22abb",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Task Info",
+              "sourceStep": "/api/3/workflow_steps/7631e8cd-42d6-4d21-b970-e017aa617627",
+              "targetStep": "/api/3/workflow_steps/79ee3a82-0821-44e2-b0e1-cabe53d61607"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d55117ce-31bb-4ed5-a363-d43d0b578b42",
+          "collection": "/api/3/workflow_collections/a846f7cc-c5bd-4e7a-960a-7fb44d8e1bc4",
+          "triggerLimit": null,
+          "description": "Retrieves finding statistics of an existing task such number of assets found, number of vulnerabilities found per risk category, etc.",
+          "name": "Get Task Statistics",
+          "tag": "#Ridge Security RidgeBot",
+          "recordTags": [
+            "Ridgebot",
+            "ridgebot"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f4e99752-3d77-4f46-abbc-43f233d9e555",
+          "steps": [
+            {
+              "uuid": "f4e99752-3d77-4f46-abbc-43f233d9e555",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "413577e8-cafa-4da5-a5ec-7b023cf2fd08",
+                "title": "Ridge Security RidgeBot: Get Task Statistics",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a052d9c1-5b29-4af1-aace-19868483bdfe",
+              "@type": "WorkflowStep",
+              "name": "Get Task Statistics",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Ridge Security RidgeBot",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ridgebot",
+                "operation": "get_task_statistics",
+                "operationTitle": "Get Task Statistics",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "9299e6b9-7f83-4ea5-89c2-5a674d84ce88",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Task Statistics",
+              "sourceStep": "/api/3/workflow_steps/f4e99752-3d77-4f46-abbc-43f233d9e555",
+              "targetStep": "/api/3/workflow_steps/a052d9c1-5b29-4af1-aace-19868483bdfe"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "713341ea-8f50-4964-9e1f-96dfdbe92bff",
+          "collection": "/api/3/workflow_collections/a846f7cc-c5bd-4e7a-960a-7fb44d8e1bc4",
+          "triggerLimit": null,
+          "description": "Generates and downloads penetration testing report from a completed task by specifying the Task ID.",
+          "name": "Generate And Download",
+          "tag": "#Ridge Security RidgeBot",
+          "recordTags": [
+            "Ridgebot",
+            "ridgebot"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f05093a1-859e-443c-9bf2-b64ed720bbea",
+          "steps": [
+            {
+              "uuid": "f05093a1-859e-443c-9bf2-b64ed720bbea",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "87c871b8-58ec-42f7-a1f2-877e8971ce7a",
+                "title": "Ridge Security RidgeBot: Generate And Download",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a091c85c-8c47-41c6-8423-dd5f104fed7a",
+              "@type": "WorkflowStep",
+              "name": "Generate And Download",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Ridge Security RidgeBot",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ridgebot",
+                "operation": "generate_and_download",
+                "operationTitle": "Generate And Download",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c2036825-f40d-4825-a22e-5b9f439a5cc3",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Generate And Download",
+              "sourceStep": "/api/3/workflow_steps/f05093a1-859e-443c-9bf2-b64ed720bbea",
+              "targetStep": "/api/3/workflow_steps/a091c85c-8c47-41c6-8423-dd5f104fed7a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c8ddaef1-f158-4ce7-a651-a6cd4bdb92ee",
+          "collection": "/api/3/workflow_collections/a846f7cc-c5bd-4e7a-960a-7fb44d8e1bc4",
+          "triggerLimit": null,
+          "description": "Stops a running or unfinished task by specifying the Task ID.",
+          "name": "Stop Task",
+          "tag": "#Ridge Security RidgeBot",
+          "recordTags": [
+            "Ridgebot",
+            "ridgebot"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7f64618d-684a-4462-842d-f41fa7884241",
+          "steps": [
+            {
+              "uuid": "7f64618d-684a-4462-842d-f41fa7884241",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "dedfb5c5-09b1-4f58-932f-b1f27c3b363c",
+                "title": "Ridge Security RidgeBot: Stop Task",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "1dd06d7c-af34-4bd8-a75b-c705342d336a",
+              "@type": "WorkflowStep",
+              "name": "Stop Task",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Ridge Security RidgeBot",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ridgebot",
+                "operation": "stop_task",
+                "operationTitle": "Stop Task",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7fe4095a-29f6-4971-83cd-e288e8a72743",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Stop Task",
+              "sourceStep": "/api/3/workflow_steps/7f64618d-684a-4462-842d-f41fa7884241",
+              "targetStep": "/api/3/workflow_steps/1dd06d7c-af34-4bd8-a75b-c705342d336a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "814b488c-2d36-435d-b828-757ef2514413",
+          "collection": "/api/3/workflow_collections/a846f7cc-c5bd-4e7a-960a-7fb44d8e1bc4",
+          "triggerLimit": null,
+          "description": "Creates a default intranet or web penetration testing task.",
+          "name": "Create Task",
+          "tag": "#Ridge Security RidgeBot",
+          "recordTags": [
+            "Ridgebot",
+            "ridgebot"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4f2a5e2c-8b70-418f-978a-b041474252a7",
+          "steps": [
+            {
+              "uuid": "4f2a5e2c-8b70-418f-978a-b041474252a7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "1ba9ed36-1ae1-49c1-a170-59d1041b5fdd",
+                "title": "Ridge Security RidgeBot: Create Task",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4b0ee2a2-b999-40f9-a945-691dfa4fef35",
+              "@type": "WorkflowStep",
+              "name": "Create Task",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Ridge Security RidgeBot",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ridgebot",
+                "operation": "create_task",
+                "operationTitle": "Create Task",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a99506d9-85cc-4f11-bd67-630259f52abc",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Task",
+              "sourceStep": "/api/3/workflow_steps/4f2a5e2c-8b70-418f-978a-b041474252a7",
+              "targetStep": "/api/3/workflow_steps/4b0ee2a2-b999-40f9-a945-691dfa4fef35"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
