@@ -23,7 +23,7 @@ class RidgeBot(object):
         service_endpoint = '{0}{1}'.format(self.server_url, endpoint)
         logger.debug("service_endpoint: {0}".format(service_endpoint))
         try:
-            response = requests.request(method, service_endpoint, data=payload, params=params, headers=self.headers)
+            response = requests.request(method, service_endpoint, data=payload, params=params, headers=self.headers, verify=False)
             if response.ok:
                 json_data = json.loads(response.content.decode('utf-8'))
                 return json_data
@@ -101,7 +101,13 @@ def generate_and_download(config, params):
     resp = ridge.make_rest_call('/api/v4/report/generate', payload=gen, method='POST')
     report_id = resp['data']['report_id']
     down = "{ \"ids\": [ " + str(report_id) + " ], \"password\": \"\"}"
-    sleep(8)
+
+    # Give server 2 minutes to generate a report. An alternative would be to merge report
+    # generation and download into a single API endpoint and use long-polling. This way, the server
+    # is responsible for the timeout duration, not the client, and the server can return a response
+    # immediately when the report is available. 
+    sleep(120)
+
     return ridge.make_rest_call('/api/v4/report/download', payload=down, method='POST')
 
 
