@@ -1,3 +1,9 @@
+"""
+Copyright start
+MIT License
+Copyright (c) 2023 Fortinet Inc
+Copyright end
+"""
 import requests, json, re
 from connectors.core.connector import get_logger, ConnectorError
 from requests import exceptions as req_exceptions
