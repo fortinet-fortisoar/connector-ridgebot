@@ -18,12 +18,13 @@ class RidgeBot(object):
             "Authorization": config.get('user_token'),
             "Content-Type": "application/json"
         }
+        self.verify_ssl= config.get('verify_ssl',False)
 
     def make_rest_call(self, endpoint, params={}, payload={}, method='GET'):
         service_endpoint = '{0}{1}'.format(self.server_url, endpoint)
         logger.debug("service_endpoint: {0}".format(service_endpoint))
         try:
-            response = requests.request(method, service_endpoint, data=payload, params=params, headers=self.headers, verify=False)
+            response = requests.request(method, service_endpoint, data=payload, params=params, headers=self.headers, verify=self.verify_ssl)
             if response.ok:
                 json_data = json.loads(response.content.decode('utf-8'))
                 return json_data
