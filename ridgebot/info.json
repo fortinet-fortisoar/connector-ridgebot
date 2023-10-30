@@ -5,9 +5,9 @@
   "publisher": "Ridge Security",
   "cs_approved": false,
   "cs_compatible": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "category": "Breach and Attack Simulation (BAS)",
-  "help_online": "https://github.com/fortinet-fortisoar/connector-ridgebot/blob/release/1.0.0/docs/RidgeBotConnectorDoc.md",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-ridgebot/blob/release/1.0.1/docs/RidgeBotConnectorDoc.md",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "configuration": {
