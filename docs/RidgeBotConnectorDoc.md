@@ -9,6 +9,8 @@ Connector Version: 1.0.0
 
 Authored By: Ridge Security
 
+Contributors: Jeffrey Tan
+
 Certified: No
 
 ## Release Notes for version 1.1.0
