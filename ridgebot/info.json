@@ -47,6 +47,8 @@
       "operation": "get_task_info",
       "title": "Get Task Info",
       "description": "Retrieves information about an existing task such as start time, end time, status, etc.",
+      "annotation": "get_task_info",
+      "category": "investigation",
       "enabled": true,
       "parameters": [
         {
@@ -65,6 +67,8 @@
       "operation": "get_task_statistics",
       "title": "Get Task Statistics",
       "description": "Retrieves finding statistics of an existing task such number of assets found, number of vulnerabilities found per risk category, etc.",
+      "category": "investigation",
+      "annotation": "get_task_statistics",
       "enabled": true,
       "parameters": [
         {
@@ -83,6 +87,8 @@
       "operation": "generate_and_download",
       "title": "Generate And Download",
       "description": "Generates and downloads penetration testing report from a completed task by specifying the Task ID.",
+      "category": "investigation",
+      "annotation": "generate_and_download",
       "enabled": true,
       "parameters": [
         {
@@ -119,6 +125,8 @@
       "operation": "create_task",
       "title": "Create Task",
       "description": "Creates a default intranet or web penetration testing task.",
+      "category": "investigation",
+      "annotation": "create_task",
       "enabled": true,
       "parameters": [
         {
