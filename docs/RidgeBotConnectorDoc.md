@@ -4,7 +4,7 @@ RidgeBot validates security vulnerabilities in your organization by using real P
 
 ### Version information
 
-Connector Version: 1.0.0
+Connector Version: 1.0.1
 
 
 Authored By: Ridge Security
@@ -13,7 +13,7 @@ Contributors: Jeffrey Tan
 
 Certified: No
 
-## Release Notes for version 1.1.0
+## Release Notes for version 1.0.1
 
 Following enhancements have been made to the `Ridge Security RidgeBot` Connector in version 1.0.1:
 <ul>
