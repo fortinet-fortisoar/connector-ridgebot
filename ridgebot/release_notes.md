@@ -1,2 +1,3 @@
 #### What's Fixed
-- Fixed the timeout issue of the 'Generate and Download Report' action by increasing the timeout limit from 8 to 120 seconds.
+- Following enhancements have been made to the Ridge Security RidgeBot Connector in version 1.0.1:
+   - Increased timeout limit for Generate and Download Report actions from 8 to 120 seconds
